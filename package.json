@@ -1,8 +1,10 @@
 {
   "name": "diamond-doc",
   "version": "0.0.0",
-  "description": "A SASS/LESS documentation generator.",
-  "main": "index.js",
+  "description": "A Sass/Less documentation generator.",
+  "bin": {
+    "ddoc": "src/index.js"
+  },
   "scripts": {
     "test": "eslint src/**"
   },

@@ -1,11 +1,14 @@
+#! /usr/bin/env node
+
 'use strict';
 
 const program = require('commander');
+const version = require('../package.json').version;
 const loadStylesheets = require('./functions/loadStylesheets');
 const loadConfig = require('./functions/loadConfig');
 
 program
-    .version('0.0.0')
+    .version(version)
     .option('-i, --input <directory>', 'Input directory.')
     .option('-o, --output <directory>', 'Output directory.')
     .option('-t, --template <name>', 'Documentation generation template.')

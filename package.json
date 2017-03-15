@@ -6,7 +6,8 @@
     "ddoc": "src/index.js"
   },
   "scripts": {
-    "test": "eslint src/**"
+    "test": "eslint src/** && node test/index.js",
+    "test-script": "node test/index.js"
   },
   "repository": {
     "type": "git",

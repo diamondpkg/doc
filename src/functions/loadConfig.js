@@ -3,18 +3,15 @@
 const fs = require('fs');
 const path = require('path');
 
-module.exports = (program) => {
-  const config = {
-    input: program.input,
-    output: program.output,
-    template: program.template,
-  };
+module.exports = (program = {}) => {
+  const config = {};
+  const resolved = path.resolve(program.config || 'diamond.doc.json');
+  const file = fs.readFileSync(resolved);
+  const configFile = JSON.parse(file);
 
-  try {
-    const configFile = fs.readFileSync(path.resolve(program.config || 'diamond.doc.json'));
-    Object.assign(JSON.parse(configFile), config);
-  } catch (e) {
-    // do nothing
+  for (const key of ['input', 'output', 'template']) {
+    config[key] = program[key] || configFile[key];
+    if (typeof config[key] === 'undefined') throw new RangeError(`option ${key} was not specified`);
   }
 
   return config;

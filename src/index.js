@@ -4,6 +4,8 @@
 
 const program = require('commander');
 const version = require('../package.json').version;
+const path = require('path');
+
 const loadStylesheets = require('./functions/loadStylesheets');
 const loadConfig = require('./functions/loadConfig');
 
@@ -15,10 +17,7 @@ program
   .option('-c, --config <filename>', 'Config file.')
   .parse(process.argv);
 
-console.log(program.input);
-console.log(program.output);
-console.log(program.template);
-console.log(program.config);
-
 const config = loadConfig(program);
-loadStylesheets(config.input);
+loadStylesheets(path.resolve(config.input)).then(() => {
+  // console.log(files);
+});

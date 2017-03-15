@@ -1,0 +1,30 @@
+{
+  "name": "diamond-doc",
+  "version": "0.0.0",
+  "description": "A SASS/LESS documentation generator.",
+  "main": "index.js",
+  "scripts": {
+    "test": "eslint src/**"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/diamondpkg/doc.git"
+  },
+  "author": "appellation <appellation@topkek.pw>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/diamondpkg/doc/issues"
+  },
+  "homepage": "https://github.com/diamondpkg/doc#readme",
+  "devDependencies": {
+    "eslint": "^3.17.1",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.0"
+  },
+  "dependencies": {
+    "commander": "^2.9.0",
+    "glob": "^7.1.1"
+  }
+}

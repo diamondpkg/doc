@@ -8,6 +8,7 @@ const path = require('path');
 
 const loadStylesheets = require('./functions/loadStylesheets');
 const loadConfig = require('./functions/loadConfig');
+const parseFiles = require('./functions/parseFiles');
 
 program
   .version(version)
@@ -18,6 +19,5 @@ program
   .parse(process.argv);
 
 const config = loadConfig(program);
-loadStylesheets(path.resolve(config.input)).then(() => {
-  // console.log(files);
-});
+loadStylesheets(path.resolve(config.input))
+  .then(parseFiles);

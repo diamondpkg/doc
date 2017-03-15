@@ -3,7 +3,9 @@
 const fs = require('fs');
 const path = require('path');
 
-module.exports = (program = {}) => {
+module.exports = (program) => {
+  if(typeof program !== 'object') program = {};
+
   const config = {};
   const resolved = path.resolve(program.config || 'diamond.doc.json');
   const file = fs.readFileSync(resolved);
